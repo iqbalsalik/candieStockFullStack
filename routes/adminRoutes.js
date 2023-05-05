@@ -14,6 +14,8 @@ router.get("/candieStock",adminController.getAllProducts)
 
 router.delete("/candieStock/:objId", adminController.postDeleteProduct)
 
+router.patch("/candieStock/:objId", adminController.postPatchProduct)
+
 
 
 router.get("/",adminController.getAddProductPage)

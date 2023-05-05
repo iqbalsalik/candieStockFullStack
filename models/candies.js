@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 const sequelize = require("../utils/database");
 
-const Candie = sequelize.define("candies",{
+const Candie = sequelize.define("Candies",{
     id:{
         type: Sequelize.INTEGER,
         allowNull: false,

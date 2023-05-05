@@ -10,14 +10,14 @@ const Users = require("./models/user");
 
 const app = express();
 
-app.use(bodyParser.json({extended:false}));
+app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(cors());
 
 app.use(async (req,res,next)=>{
     try{
         const user =await Users.findByPk(1);
-        req.user = user
+        req.user = user;
         next()
     } catch(err){
         console.log(err)
@@ -26,8 +26,8 @@ app.use(async (req,res,next)=>{
 
 app.use(router);
 
-Candie.belongsTo(Users);
 Users.hasMany(Candie)
+Candie.belongsTo(Users);
 
 sequelize.
 sync()
